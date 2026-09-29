@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LA AGENC.IA — Enlaces</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🟡</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Montserrat:wght@500;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --negro: #2A2A2A;
+    --amarillo: #FFD60A;
+    --verde: #7B9E89;
+    --teal: #6B9D9E;
+    --hueso: #F9F7F4;
+    --blanco: #FFFFFF;
+    --bg: var(--hueso);
+    --card-bg: var(--blanco);
+    --card-border: rgba(42,42,42,0.10);
+    --text: var(--negro);
+    --text-soft: rgba(42,42,42,0.55);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: var(--hueso);
+      --card-bg: var(--blanco);
+      --card-border: rgba(42,42,42,0.10);
+      --text: var(--negro);
+      --text-soft: rgba(42,42,42,0.55);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: var(--hueso);
+    --card-bg: var(--blanco);
+    --card-border: rgba(42,42,42,0.10);
+    --text: var(--negro);
+    --text-soft: rgba(42,42,42,0.55);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    scroll-padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  body {
+    font-family: 'Lato', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100%;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .header {
+    background: var(--negro);
+    padding: 56px 24px 64px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* onda orgánica al pie del header — curva, no un blob circular */
+  .header::after {
+    content: '';
+    position: absolute;
+    left: -10%;
+    right: -10%;
+    bottom: -1px;
+    height: 40px;
+    background: var(--bg);
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  }
+
+  .avatar {
+    width: 76px;
+    height: 76px;
+    border-radius: 20px;
+    background: var(--negro);
+    border: 2px solid rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 28px;
+    color: var(--blanco);
+    position: relative;
+  }
+
+  .avatar::after {
+    content: '';
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--amarillo);
+  }
+
+  .marca {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 26px;
+    color: var(--blanco);
+    letter-spacing: 0.3px;
+  }
+
+  .tagline {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    margin-top: 10px;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+  }
+
+  main {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 8px 20px 48px;
+  }
+
+  .enlaces {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .enlace {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: var(--card-bg);
+    border: 1.5px solid var(--card-border);
+    border-radius: 16px;
+    padding: 18px 20px;
+    text-decoration: none;
+    color: var(--text);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14.5px;
+    transition: border-color 0.18s ease, transform 0.18s ease;
+  }
+
+  .enlace:active { transform: scale(0.98); }
+
+  .enlace:hover { border-color: var(--verde); }
+
+  .enlace.destacado {
+    background: var(--amarillo);
+    border-color: var(--amarillo);
+    color: var(--negro);
+  }
+
+  .enlace-flecha {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    opacity: 0.5;
+  }
+
+  .enlace.destacado .enlace-flecha { opacity: 0.7; }
+
+  footer {
+    text-align: center;
+    padding: 32px 20px 12px;
+  }
+
+  .footer-marca {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 13px;
+    color: var(--text-soft);
+  }
+
+  .footer-marca .dot {
+    color: var(--amarillo);
+  }
+
+  .footer-nota {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    color: var(--text-soft);
+    margin-top: 6px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="avatar" id="avatar">LA</div>
+    <div class="marca" id="marcaTitulo">LA AGENC.IA</div>
+    <div class="tagline" id="taglineTexto">La publicidad cambió. ¿Vos?</div>
+  </div>
+
+  <main>
+    <div class="enlaces" id="enlacesContainer"></div>
+  </main>
+
+  <footer>
+    <div class="footer-marca">LA AGENC<span class="dot">.</span>IA</div>
+    <div class="footer-nota">Plantilla reutilizable — clonar y editar por cliente</div>
+  </footer>
+
+<script>
+  /* ==========================================================
+     CONFIGURACIÓN — LO ÚNICO QUE HAY QUE TOCAR POR CADA CLIENTE
+     ==========================================================
+     1. "inicial"  → las 1-2 letras que van en el avatar cuadrado
+     2. "marca"    → el nombre que aparece grande
+     3. "tagline"  → la frase o descripción corta debajo del nombre
+     4. "enlaces"  → la lista de botones. Cada uno es:
+          { texto: "Lo que se lee", url: "adónde va", destacado: true/false }
+        "destacado: true" en máximo UN enlace (el más importante,
+        queda pintado de amarillo). El resto queda como está.
+     Máximo recomendado: 5 enlaces (después se vuelve ilegible en el celu).
+  */
+  const config = {
+    inicial: "LA",
+    marca: "LA AGENC.IA",
+    tagline: "La publicidad cambió. ¿Vos?",
+    enlaces: [
+      { texto: "La publicidad cambió",   url: "https://tu-web-o-brief.com",        destacado: true },
+      { texto: "Quiénes somos",          url: "https://tu-canva-o-pagina.com" },
+      { texto: "Contanos tu negocio",    url: "https://tu-brief-interactivo.com" },
+      { texto: "Escribinos por WhatsApp", url: "https://wa.me/5491100000000" },
+      { texto: "Seguinos en LinkedIn",   url: "https://linkedin.com/company/la-agenc-ia" }
+    ]
+  };
+
+  document.getElementById('avatar').textContent = config.inicial;
+  document.getElementById('marcaTitulo').textContent = config.marca;
+  document.getElementById('taglineTexto').textContent = config.tagline;
+
+  const contenedor = document.getElementById('enlacesContainer');
+  config.enlaces.forEach(enlace => {
+    const a = document.createElement('a');
+    a.href = enlace.url;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.className = 'enlace' + (enlace.destacado ? ' destacado' : '');
+    a.innerHTML = `<span>${enlace.texto}</span>
+      <svg class="enlace-flecha" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+      </svg>`;
+    contenedor.appendChild(a);
+  });
+</script>
+</body>
+</html>
